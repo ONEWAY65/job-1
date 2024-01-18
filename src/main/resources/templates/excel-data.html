@@ -1,0 +1,46 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Excel Data</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Excel Data</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Column 1</th>
+                <th>Column 2</th>
+                <!-- Add more columns as needed -->
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Use Thymeleaf to iterate through the data -->
+            <tr th:each="row : ${excelData}">
+                <td th:text="${row.column1}"></td>
+                <td th:text="${row.column2}"></td>
+                <!-- Add more columns as needed -->
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>
